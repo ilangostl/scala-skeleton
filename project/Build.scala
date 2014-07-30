@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 import org.sbtidea.SbtIdeaPlugin._
+import sbtassembly.Plugin._
 import AssemblyKeys._
 
 
@@ -40,7 +41,7 @@ object SkeletonBuild extends Build {
   lazy val root = Project(
     "root",
     file("."),
-    settings = buildSettings ++ Seq (
+    settings = buildSettings ++ assemblySettings ++ Seq (
       libraryDependencies ++= rootDependencies
     )
   )
