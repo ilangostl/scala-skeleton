@@ -4,14 +4,14 @@ Scala-Skeleton
 It's a simple project with __sbt__ tool. For fast start develop in __scala__.
 Project contain simple tests and jar building. Licence MIT.
 
-PLUGINS
+Plugins
 ===============================
 
-    * sbt-assemble
+    * sbt-assembly
     
     * sbt-idea
     
-Howto
+How to
 ===============================
     
     1. git clone git@github.com:rmuhamedgaliev/scala-skeleton.git
@@ -24,3 +24,5 @@ Howto
     8. Enjoy!
     
 If you want update please send pull-requests. Thanks.
+
+[ ![Codeship Status for rmuhamedgaliev/scala-skeleton](https://www.codeship.io/projects/34316c40-fa44-0131-9eeb-3aac33d676db/status)](https://www.codeship.io/projects/29032)
