@@ -9,13 +9,15 @@ object BuildSettings {
   val buildOrganization = "io.github.rmuhamedgaliev"
   val buildVersion      = "1.0"
   val buildScalaVersion = "2.11.1"
+  val projectName = "root"
 
   val buildSettings = Defaults.defaultSettings ++ Seq (
     organization := buildOrganization,
     version      := buildVersion,
     scalaVersion := buildScalaVersion,
     ideaExcludeFolders := ".idea" :: ".idea_modules" :: Nil,
-    scalacOptions ++= Seq("-encoding", "UTF-8", "-Xlint", "-deprecation", "-unchecked", "-feature")
+    scalacOptions ++= Seq("-encoding", "UTF-8", "-Xlint", "-deprecation", "-unchecked", "-feature"),
+    crossPaths := false
   )
 }
 
@@ -39,9 +41,11 @@ object SkeletonBuild extends Build {
   )
 
   lazy val root = Project(
-    "root",
+    projectName,
     file("."),
     settings = buildSettings ++ assemblySettings ++ Seq (
+      jarName in assembly := projectName + ".jar",
+      mainClass in assembly := Some(buildOrganization + ".Main"),
       libraryDependencies ++= rootDependencies
     )
   )
